@@ -39,7 +39,7 @@
 }
 
 .entry-content > .alignwide,
-.site-header > .alignwide
+.site-header > .alignwide,
 .site-footer > .alignwide {
   max-width: 1070px;
 }
@@ -56,8 +56,8 @@
   .site-header > *,
   .site-footer > *,
   .site-content > h1 {
-    padding-left: 0px;
-    padding-right: 0px;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
@@ -125,7 +125,7 @@
 ## Group
 --------------------------------------------------------------*/
 
-.wp-block-group > .wp-block-group__inner-container > * {
+.wp-block-group > .wp-block-group__inner-container > *:not(.entry-content) {
   max-width: 580px;
   margin-left: auto;
   margin-right: auto;
@@ -203,7 +203,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
 
 .entry-content li,
 .site-header li,
-.site-footer li, {
+.site-footer li {
   margin-left: 2.5em;
 }
 
@@ -229,7 +229,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
 .site-header ul ul li,
 .site-header ol ol li,
 .site-header ul ol li,
-.site-header ol ul li
+.site-header ol ul li,
 .site-footer ul ul li,
 .site-footer ol ol li,
 .site-footer ul ol li,
@@ -340,34 +340,34 @@ ul.wp-block-latest-posts.is-grid.alignwide {
 ## Color Palette
 --------------------------------------------------------------*/
 
-.has-strong-blue-color {
-  color: #0073aa;
+.has-primary-color {
+  color: var(--wp--preset--color--primary);
 }
 
-.has-strong-blue-background-color {
-  background-color: #0073aa;
+.has-primary-background-color {
+  background-color: var(--wp--preset--color--primary);
 }
 
-.has-lighter-blue-color {
-  color: #229fd8;
+.has-primary-light-color {
+  color: var(--wp--preset--color--primary-light);
 }
 
-.has-lighter-blue-background-color {
-  background-color: #229fd8;
+.has-primary-light-background-color {
+  background-color: var(--wp--preset--color--primary-light);
 }
 
-.has-very-light-gray-color {
-  color: #eee;
+.has-secondary-light-color {
+  color: var(--wp--preset--color--secondary-light);
 }
 
-.has-very-light-gray-background-color {
-  background-color: #eee;
+.has-secondary-light-background-color {
+  background-color: var(--wp--preset--color--secondary-light);
 }
 
-.has-very-dark-gray-color {
-  color: #444;
+.has-secondary-color {
+  color: var(--wp--preset--color--secondary);
 }
 
-.has-very-dark-gray-background-color {
-  background-color: #444;
+.has-secondary-background-color {
+  background-color: var(--wp--preset--color--secondary);
 }

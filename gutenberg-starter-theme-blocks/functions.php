@@ -18,28 +18,34 @@ if ( ! function_exists( 'gutenberg_starter_theme_blocks_support' ) ) :
 		// Adding support for responsive embedded content.
 		add_theme_support( 'responsive-embeds' );
 
+		// Add support for custom line height controls.
+		add_theme_support( 'custom-line-height' );
+
+		// Add support for experimental link color control.
+		add_theme_support( 'experimental-link-color' );
+
 		// Support a custom color palette.
 		add_theme_support( 'editor-color-palette', array(
 			array(
 				'name'  => __( 'Strong Blue', 'gutenberg-starter-theme-blocks' ),
-				'slug'  => 'strong-blue',
+				'slug'  => 'primary',
 				'color' => '#0073aa',
 			),
 			array(
 				'name'  => __( 'Lighter Blue', 'gutenberg-starter-theme-blocks' ),
-				'slug'  => 'lighter-blue',
+				'slug'  => 'primary-light',
 				'color' => '#229fd8',
 			),
 			array(
-				'name'  => __( 'Very Light Gray', 'gutenberg-starter-theme-blocks' ),
-				'slug'  => 'very-light-gray',
-				'color' => '#eee',
-			),
-			array(
 				'name'  => __( 'Very Dark Gray', 'gutenberg-starter-theme-blocks' ),
-				'slug'  => 'very-dark-gray',
+				'slug'  => 'secondary',
 				'color' => '#444',
 			),
+			array(
+				'name'  => __( 'Very Light Gray', 'gutenberg-starter-theme-blocks' ),
+				'slug'  => 'secondary-light',
+				'color' => '#eee',
+			)
 		) );
 
 		// Starter content

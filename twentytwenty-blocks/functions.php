@@ -1,6 +1,6 @@
 <?php
 if ( ! function_exists( 'twentytwentyblocks_theme_support' ) ) :
-    function twentytwentyblocks_theme_support()  {
+	function twentytwentyblocks_theme_support() {
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
 
@@ -15,6 +15,12 @@ if ( ! function_exists( 'twentytwentyblocks_theme_support' ) ) :
 
 		// Enqueue editor styles.
 		add_editor_style( 'twentytwenty-styles/editor-style-block.css' );
+
+		// Add support for custom line height controls.
+		add_theme_support( 'custom-line-height' );
+
+		// Add support for experimental link color control.
+		add_theme_support( 'experimental-link-color' );
 
 		// Add custom editor font sizes.
 		add_theme_support(
@@ -52,29 +58,19 @@ if ( ! function_exists( 'twentytwentyblocks_theme_support' ) ) :
 			'editor-color-palette',
 			array(
 				array(
+					'name'  => __( 'Background', 'twentytwenty-blocks' ),
+					'slug'  => 'background',
+					'color' => '#f5efe0',
+				),
+				array(
+					'name'  => __( 'Text', 'twentytwenty-blocks' ),
+					'slug'  => 'foreground',
+					'color' => '#000',
+				),
+				array(
 					'name'  => __( 'Primary', 'twentytwenty-blocks' ),
 					'slug'  => 'primary',
-					'color' => '#0073AA',
-				),
-				array(
-					'name'  => __( 'Secondary', 'twentytwenty-blocks' ),
-					'slug'  => 'secondary',
-					'color' => '#005177',
-				),
-				array(
-					'name'  => __( 'Dark Gray', 'twentytwenty-blocks' ),
-					'slug'  => 'dark-gray',
-					'color' => '#111',
-				),
-				array(
-					'name'  => __( 'Light Gray', 'twentytwenty-blocks' ),
-					'slug'  => 'light-gray',
-					'color' => '#767676',
-				),
-				array(
-					'name'  => __( 'White', 'twentytwenty-blocks' ),
-					'slug'  => 'white',
-					'color' => '#FFF',
+					'color' => '#cd2653',
 				),
 			)
 		);
@@ -308,13 +304,12 @@ function twentytwentyblocks_register_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'twentytwentyblocks_register_styles' );
 
-
 /**
  * Register Block Patterns.
  */
 
-if ( function_exists( 'register_pattern' ) ) {
-	register_pattern (
+if ( function_exists( 'register_block_pattern' ) ) {
+	register_block_pattern (
 	    'twentytwenty-blocks/exhibitions-pattern',
 	    array (
 	        'title'   => __( 'Two columns of mixed content', 'twentytwenty' ),
